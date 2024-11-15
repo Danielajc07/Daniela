@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridade: Ataques e Protección</title>
+    <style>
+        /* Estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Encabezado fixo */
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-align: center;
+        }
+
+        header p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        /* Separador para o contido baixo o header fixo */
+        .content-separator {
+            margin-top: 140px;
+        }
+
+        /* Seccións */
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #004aad;
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #ff6600;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+
+        /* Parágrafos */
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Cartas con efectos */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Listas */
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Táboa */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #004aad;
+        }
+
+        th {
+            background-color: #004aad;
+            color: white;
+        }
+
+        td {
+            background-color: #f0f4f8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (min-width: 768px) {
+            .card-container {
+                justify-content: space-between;
+            }
+
+            .card {
+                flex-basis: 30%;
+            }
+        }
+
+        /* Animación ao desprazarse (scroll) */
+        [data-scroll] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        [data-scroll].in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ciberseguridade: Ataques e Protección</h1>
+        <p>Protexendo os teus datos e sistemas no mundo dixital</p>
+    </header>
+
+    <div class="content-separator"></div>
+
+    <section id="ataques" data-scroll>
+        <h2>Tipos de Ataques Informáticos</h2>
+        <p>Os ciberataques son accións maliciosas dirixidas contra sistemas informáticos. Aquí tes algúns dos máis comúns:</p>
+        <div class="card-container">
+            <div class="card">
+                <img src="img/phishing.png" alt="Exemplo de Phishing">
+                <h3>Phishing</h3>
+                <p>O phishing busca enganar aos usuarios para roubar datos sensibles mediante mensaxes fraudulentas.</p>
+            </div>
+            <div class="card">
+                <img src="img/ransomware.png" alt="Exemplo de Ransomware">
+                <h3>Ransomware</h3>
+                <p>Ransomware cifra os ficheiros da vítima e esixe un rescate para restaurar o acceso.</p>
+            </div>
+            <div class="card">
+                <img src="img/ddos.png" alt="Exemplo de Ataque DDoS">
+                <h3>DDoS</h3>
+                <p>Os ataques de Denegación de Servizo Distribuído (DDoS) inundan servidores para facelos inaccesibles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proteccion" data-scroll>
+        <h2>Mecanismos de Protección e Defensa</h2>
+        <p>Para mitigar os riscos dos ciberataques, hai varias prácticas recomendadas:</p>
+        <ol>
+            <li>Implementar antivirus e firewalls robustos.</li>
+            <li>Configurar a autenticación multifactor para engadir capas de seguridade.</li>
+            <li>Manter todo o software actualizado para corrixir vulnerabilidades.</li>
+        </ol>
+        <img src="img/firewall.png" alt="Uso dun firewall" style="max-width: 700px; display: block; margin: 20px auto;">
+    </section>
+
+    <section id="tabela" data-scroll>
+        <h2>Comparación de Tipos de Ataques</h2>
+        <table>
+            <tr>
+                <th>Tipo de Ataque</th>
+                <th>Descrición</th>
+                <th>Gravidade</th>
+            </tr>
+            <tr>
+                <td>Phishing</td>
+                <td>Engano para obter datos persoais ou financeiros</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>Ransomware</td>
+                <td>Secuestro de datos cunha petición de rescate</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>DDoS</td>
+                <td>Sobrecarga de sistemas para deixalos inaccesibles</td>
+                <td>Moderada</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>Para máis información sobre cada tema, visita: <a href="#ataques">Ataques</a> | <a href="#proteccion">Protección</a> | <a href="#tabela">Táboa Comparativa</a></p>
+        <p>&copy; 2024 - Ciberseguridade Web</p>
+    </footer>
+
+    <script>
+        // Función para detectar cando os elementos entran na vista (scroll effect)
+        const scrollElements = document.querySelectorAll("[data-scroll]");
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add("in-view");
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
+
+        handleScrollAnimation(); // Executa ao cargar a páxina
+    </script>
+
+</body>
+</html>
